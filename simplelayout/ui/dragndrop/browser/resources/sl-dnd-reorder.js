@@ -13,11 +13,6 @@ function setHeightOfEmptyDropZone(){
 }
 
 function refreshSimplelayoutDragndropOrdering() { 
-
-    var ajaxManager = jq.manageAjax.create('queuedRequests', { 
-        queue: true,  
-        cacheResponse: false 
-    }); 
     
     var sl_content = jq('.simplelayout-content');
     
