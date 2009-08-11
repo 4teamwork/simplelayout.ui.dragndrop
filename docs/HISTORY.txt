@@ -1,6 +1,16 @@
 Changelog
 =========
 
+2.0b2
+----------------
+
+* enable caching for js
+* remove jq ui version from file name
+* updated to jquery ui 1.7.2
+* fixed dragndrop if there is more than one simplelayout-container 
+  (for dropzoneportlet)
+
+
 2.0b1
 ----------------
 
