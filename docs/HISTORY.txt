@@ -4,24 +4,26 @@ Changelog
 2.0b2
 ----------------
 
-* enable caching for js
-* remove jq ui version from file name
-* updated to jquery ui 1.7.2
+* fix Drag'n'Drop feature for Safari [jonas.baumann] 
+* enable caching for js [mathias.leimgruber]
+* remove jq ui version from file name [mathias.leimgruber]
+* updated to jquery ui 1.7.2 [mathias.leimgruber]
 * fixed dragndrop if there is more than one simplelayout-container 
-  (for dropzoneportlet)
+  (for dropzoneportlet) [mathias.leimgruber]
 
 
 2.0b1
 ----------------
 
 * make dragging and dropping with multible columns/slots available
+  [mathias.leimgruber]
 
 
 
 1.0 - Unreleased
 ----------------
 
-* Initial release
-* implements block drag 'n' drop
-* uses jquery
+* Initial release [mathias.leimgruber]
+* implements block drag 'n' drop [mathias.leimgruber]
+* useing jquery [mathias.leimgruber]
 

@@ -48,8 +48,8 @@ function refreshSimplelayoutDragndropOrdering() {
             var column = jq(e.target).attr('class');
             
             var originalTarget = '';
-            //stupid IE workaround
-            if (jq.browser.msie) {
+            //stupid IE and Safari workaround
+            if (jq.browser.msie || jq.browser.safari) {
                 originalTarget = e.srcElement;
                 }
                 else {
