@@ -4,6 +4,7 @@ Changelog
 2.0b2
 ----------------
 
+* fix Drag'n'Drop feature, if mouse moves too fast ;-) [mathias.leimgruber]
 * fix Drag'n'Drop feature for Safari [jonas.baumann] 
 * enable caching for js [mathias.leimgruber]
 * remove jq ui version from file name [mathias.leimgruber]
