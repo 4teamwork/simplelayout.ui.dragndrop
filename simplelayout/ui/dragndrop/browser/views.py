@@ -15,7 +15,7 @@ class SaveDragndropOrderView(BrowserView):
             self.context.moveObject(id, i)
             obj.reindexObject(idxs=['getObjPositionInParent'])
 
-        #no set the new interfaces
+        #set the new interfaces
         o_uid = obj_uid.replace('uid_','')
         o = self.context.reference_catalog.lookupObject(o_uid)
 

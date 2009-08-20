@@ -47,16 +47,7 @@ function refreshSimplelayoutDragndropOrdering() {
             var slot = jq(e.target).attr('id');
             var column = jq(e.target).attr('class');
             
-            var originalTarget = '';
-            //stupid IE and Safari workaround
-            if (jq.browser.msie || jq.browser.safari) {
-                originalTarget = e.srcElement;
-                }
-                else {
-                originalTarget = e.originalTarget
-                }
-            var obj_uid = jq(originalTarget).parent('.BlockOverallWrapper').attr('id');
-            
+            var obj_uid = jq(ui.item[0]).attr('id');
             var activeLayout = jq('.sl-layout.active',ui.item);
 
                     
