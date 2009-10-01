@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <object name="portal_javascripts">
- <javascript
+ <javascript cacheable="True" compression="safe" cookable="True"
+    enabled="True" expression=""
     id="++resource++simplelayout.ui.dragndrop-resources/jquery-ui-current.js"
-    cacheable="True" compression="safe" cookable="False"
-    enabled="True" expression=""  inline="False"/>
-
- <javascript
+    inline="False"/>
+ <javascript cacheable="True" compression="safe" cookable="True"
+    enabled="True"
+    expression="python: object.restrictedTraverse('@@simplelayout').isSimplelayout"
     id="++resource++simplelayout.ui.dragndrop-resources/sl-dnd-reorder.js"
-    cacheable="True" compression="none" cookable="False"
-    enabled="True" expression=""  inline="False"/>
+    inline="False"/>
 
 </object>
