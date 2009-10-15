@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.0b4
+----------------
+
+
 2.0b3
 ----------------
 * compress, merged and cache js. [mathias.leimgruber]
