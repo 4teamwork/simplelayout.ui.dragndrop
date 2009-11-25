@@ -57,7 +57,7 @@ function refreshSimplelayoutDragndropOrdering() {
                             data:{ uids : ids ,slot:slot,column:column,obj_uid:obj_uid},
                             success:function(){
                                 if (activeLayout.length != 0){
-                                    refreshParagraph(activeLayout[0]);
+                                    simplelayout.refreshParagraph(activeLayout[0]);
                                     }
                                 }
                             });
@@ -80,7 +80,7 @@ function refreshSimplelayoutDragndropOrdering() {
 
     })
     
-    if(gup('edit_mode')){
+    if(simplelayout.edit_mode=="1"){
         sl_content.sortable('enable');
     }else{
         sl_content.sortable('disable');

@@ -3,7 +3,7 @@ Changelog
 
 2.0b4
 ----------------
-
+* JS: use simplelayout object [mathias.leimgruber]
 
 2.0b3
 ----------------
