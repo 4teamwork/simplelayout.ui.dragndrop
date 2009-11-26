@@ -5,8 +5,10 @@
     i18n_domain="simplelayout">
 
     <five:registerPackage package="." initialize=".initialize" />
-
+    
+    <include package="collective.js.jqueryui" />
     <include package=".browser" />
+    
 
     <genericsetup:registerProfile
         name="default"

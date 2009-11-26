@@ -25,6 +25,7 @@ setup(name='simplelayout.ui.dragndrop',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'collective.js.jqueryui==1.7.2.5',
           # -*- Extra requirements: -*-
       ],
       entry_points="""

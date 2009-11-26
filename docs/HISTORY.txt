@@ -4,6 +4,8 @@ Changelog
 2.0b4
 ----------------
 * JS: use simplelayout object [mathias.leimgruber]
+* use collective.js.jqueryui [mathias.leimgruber]
+* reorder JS by GenericSetup [mathias.leimgruber]
 
 2.0b3
 ----------------
