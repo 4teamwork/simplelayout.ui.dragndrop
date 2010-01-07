@@ -1,6 +1,11 @@
 Changelog
 =========
 
+2.0rc1
+----------------
+* set size for empty slots [mathias.leimgruber]
+
+
 2.0b4
 ----------------
 * JS: use simplelayout object [mathias.leimgruber]

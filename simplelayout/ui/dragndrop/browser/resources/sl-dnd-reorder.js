@@ -2,14 +2,32 @@ var ui_dragging = false;
 
 function setHeightOfEmptyDropZone(){
     //set height of empty dropzones
-    jq('.simplelayout-content [id*=slot]').each(function(i,v){
-        var v_obj = jq(v);
-        if (v_obj.height()==0){
-            v_obj.css('height','300px');    
-        }else{
-         v_obj.css('height','auto');
-                }
+    var sl_slots = jq('.simplelayout-content [id*=slot]');
+    var heightest_slot = 0;
+    
+    if (sl_slots.length > 1){
+        sl_slots.each(function(i,o){
+            var $obj = jq(o);
+            //get height
+            if ($obj.height() > heightest_slot){
+                heightest_slot = $obj.height();
+            }
+            
+            var $items = $obj.contents('.BlockOverallWrapper');
+            if (simplelayout.edit_mode == '1' && $items.length == 0){
+                if (!$obj.hasClass('emptyZone')){$obj.addClass('emptyZone')};
+            }else{
+                $obj.removeClass('emptyZone');
+            }
         });
+        
+        //set height on empty slots
+        //reset
+        sl_slots.css('height','');
+        var $emptySlots = jq('.emptyZone');
+        if (heightest_slot == 0){$emptySlots.css('height','300px')};
+        if (heightest_slot != 0){$emptySlots.css('height',heightest_slot+'px')};
+    }
 }
 
 function refreshSimplelayoutDragndropOrdering() { 
@@ -61,9 +79,6 @@ function refreshSimplelayoutDragndropOrdering() {
                                     }
                                 }
                             });
-            
-            
-            
             
 		},
         /*change: function(e, ui){
