@@ -19,10 +19,18 @@ class SaveDragndropOrderView(BrowserView):
         o_uid = obj_uid.replace('uid_','')
         o = self.context.reference_catalog.lookupObject(o_uid)
 
+        iface_to_remove = []
         if SLOT_INTERFACES_MAP.has_key(slot):
             for i in SLOT_INTERFACES_MAP.values():
-                if i.providedBy(o): noLongerProvides(o,i)
-            alsoProvides(o,SLOT_INTERFACES_MAP[slot])
+                if i.providedBy(o):
+                    iface_to_remove.append(i) 
+                    
+
+            if SLOT_INTERFACES_MAP[slot] not in iface_to_remove:
+                for iface in iface_to_remove:
+                    noLongerProvides(o,iface)
+                alsoProvides(o,SLOT_INTERFACES_MAP[slot])
+
     
         for col in column.split(' '):
             if col.find('column') != -1:

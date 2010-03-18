@@ -1,6 +1,12 @@
 Changelog
 =========
 
+2.0rc2
+----------------
+* only change slot interface if source and target are 
+  not the same [mathias.leimgruber]
+
+
 2.0rc1
 ----------------
 * set size for empty slots [mathias.leimgruber]
