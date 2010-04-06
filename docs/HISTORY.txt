@@ -1,6 +1,12 @@
 Changelog
 =========
 
+
+2.0rc3
+----------------
+* bugfix, use POST ajax-request for drag'n'drop reorder [mathias.leimgruber]
+
+
 2.0rc2
 ----------------
 * only change slot interface if source and target are 

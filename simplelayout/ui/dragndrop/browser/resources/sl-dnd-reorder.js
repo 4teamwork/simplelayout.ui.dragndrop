@@ -72,6 +72,7 @@ function refreshSimplelayoutDragndropOrdering() {
             //jq.post('sl_dnd_saveorder', { uids : ids ,slot:slot,column:column,obj_uid:obj_uid});
             //refresh paragraph after reordering
             ajaxManager.add({url:'sl_dnd_saveorder',
+                            type:'POST', 
                             data:{ uids : ids ,slot:slot,column:column,obj_uid:obj_uid},
                             success:function(){
                                 if (activeLayout.length != 0){
