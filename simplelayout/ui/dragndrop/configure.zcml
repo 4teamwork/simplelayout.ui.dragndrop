@@ -6,9 +6,8 @@
 
     <five:registerPackage package="." initialize=".initialize" />
     
-    <include package="collective.js.jqueryui" />
     <include package=".browser" />
-    
+    <include package="collective.js.jqueryui" />
 
     <genericsetup:registerProfile
         name="default"

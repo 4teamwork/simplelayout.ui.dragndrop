@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '2.0rc3'
+version = open('simplelayout/ui/dragndrop/version.txt').read().strip()
 
 setup(name='simplelayout.ui.dragndrop',
       version=version,
@@ -25,8 +25,7 @@ setup(name='simplelayout.ui.dragndrop',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'collective.js.jqueryui==1.7.2.5',
-          # -*- Extra requirements: -*-
+          'collective.js.jqueryui', 
       ],
       entry_points="""
       # -*- Entry points: -*-

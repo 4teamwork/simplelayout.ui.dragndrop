@@ -2,6 +2,14 @@ Changelog
 =========
 
 
+3.0
+----------------
+* removed dependecies for jquery
+  [09.07.2010, mathias.leimgruber]
+
+* change jquery ui to newst version 1.8c3
+  [12.07.2010, mathias.leimgruber]
+
 2.0rc3
 ----------------
 * bugfix, use POST ajax-request for drag'n'drop reorder [mathias.leimgruber]
