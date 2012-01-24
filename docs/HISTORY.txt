@@ -4,6 +4,9 @@ Changelog
 
 3.0
 ----------------
+* Implement new way of editing a block (edit actions will appear at mousover).
+  [mathias.leimgruber]
+
 * removed dependecies for jquery
   [09.07.2010, mathias.leimgruber]
 
@@ -17,7 +20,7 @@ Changelog
 
 2.0rc2
 ----------------
-* only change slot interface if source and target are 
+* only change slot interface if source and target are
   not the same [mathias.leimgruber]
 
 
@@ -41,11 +44,11 @@ Changelog
 ----------------
 
 * fix Drag'n'Drop feature, if mouse moves too fast ;-) [mathias.leimgruber]
-* fix Drag'n'Drop feature for Safari [jonas.baumann] 
+* fix Drag'n'Drop feature for Safari [jonas.baumann]
 * enable caching for js [mathias.leimgruber]
 * remove jq ui version from file name [mathias.leimgruber]
 * updated to jquery ui 1.7.2 [mathias.leimgruber]
-* fixed dragndrop if there is more than one simplelayout-container 
+* fixed dragndrop if there is more than one simplelayout-container
   (for dropzoneportlet) [mathias.leimgruber]
 
 

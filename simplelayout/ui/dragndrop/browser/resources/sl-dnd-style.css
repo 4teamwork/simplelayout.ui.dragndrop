@@ -10,11 +10,3 @@ div.BlockOverallWrapper-helper {
     display:inline;
     float:left;
 }
-
-.simplelayout-content .sl-controls {
-    cursor:pointer;
-}
-
-.mouseToggler {
-    cursor:move;
-}

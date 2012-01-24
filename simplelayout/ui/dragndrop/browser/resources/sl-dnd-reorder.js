@@ -4,7 +4,7 @@ function setHeightOfEmptyDropZone(){
     //set height of empty dropzones
     var sl_slots = jq('.simplelayout-content [id*=slot]');
     var heightest_slot = 0;
-    
+
     if (sl_slots.length > 1){
         sl_slots.each(function(i,o){
             var $obj = jq(o);
@@ -12,15 +12,15 @@ function setHeightOfEmptyDropZone(){
             if ($obj.height() > heightest_slot){
                 heightest_slot = $obj.height();
             }
-            
+
             var $items = $obj.contents('.BlockOverallWrapper');
-            if (simplelayout.edit_mode == '1' && $items.length == 0){
+            if ($items.length == 0){
                 if (!$obj.hasClass('emptyZone')){$obj.addClass('emptyZone')};
             }else{
                 $obj.removeClass('emptyZone');
             }
         });
-        
+
         //set height on empty slots
         //reset
         sl_slots.css('height','');
@@ -30,21 +30,13 @@ function setHeightOfEmptyDropZone(){
     }
 }
 
-function refreshSimplelayoutDragndropOrdering() { 
-    
-    var sl_content = jq('.simplelayout-content');
-    
-    jq('.BlockOverallWrapper .sl-controls').bind("mousedown",function(e){
-        jq(this).toggleClass('mouseToggler');
-        })
+function refreshSimplelayoutDragndropOrdering() {
 
-    jq('.BlockOverallWrapper .sl-controls').bind("mouseup",function(e){
-        jq(this).toggleClass('mouseToggler');
-        })
+    var sl_content = jq('.simplelayout-content');
 
     jq('.simplelayout-content [id*=slot]').sortable({
 		items: '.BlockOverallWrapper',
-        handle: jq('.BlockOverallWrapper .sl-controls'),
+        handle: jq('.BlockOverallWrapper .sl-controls #document-action-dragme a img'),
         scroll : true,
 		forcePlaceholderSize : false,
 		placeholder: 'placeholder',
@@ -53,9 +45,10 @@ function refreshSimplelayoutDragndropOrdering() {
 		opacity: 0.5,
 		tolerance:'pointer',
 		start: function(e,ui) {
-		    ui_dragging = true;
-		    ui.placeholder.css("width", ui.item.width()-1);
-		    ui.placeholder.css("height", ui.item.height()-1);
+            ui_dragging = true;
+            ui.placeholder.css("width", ui.item.width()-1);
+            ui.placeholder.css("height", ui.item.height()-1);
+            simplelayout.toggleEditMode(enable=false, ui.item.find('.sl-controls'));
 
 		},
 		update: function(e, ui){
@@ -64,15 +57,15 @@ function refreshSimplelayoutDragndropOrdering() {
             ids = ids.join(',');
             var slot = jq(e.target).attr('id');
             var column = jq(e.target).attr('class');
-            
+
             var obj_uid = jq(ui.item[0]).attr('id');
             var activeLayout = jq('.sl-layout.active',ui.item);
 
-                    
+
             //jq.post('sl_dnd_saveorder', { uids : ids ,slot:slot,column:column,obj_uid:obj_uid});
             //refresh paragraph after reordering
             ajaxManager.add({url:'sl_dnd_saveorder',
-                            type:'POST', 
+                            type:'POST',
                             data:{ uids : ids ,slot:slot,column:column,obj_uid:obj_uid},
                             success:function(){
                                 if (activeLayout.length != 0){
@@ -80,34 +73,29 @@ function refreshSimplelayoutDragndropOrdering() {
                                     }
                                 }
                             });
-            
+
 		},
         /*change: function(e, ui){
             setHeightOfEmptyDropZone();
 
 		}, */
 		stop: function(e, ui){
-		    ui.item.removeAttr("style");
+            ui.item.removeAttr("style");
+            simplelayout.toggleEditMode(enable=true, ui.item.find('.sl-controls'));
             setHeightOfEmptyDropZone();
-            
+
             jq(".simplelayout-content").trigger('afterReorder');
-            
+
 		}
 
     })
-    
-    if(simplelayout.edit_mode=="1"){
-        sl_content.sortable('enable');
-    }else{
-        sl_content.sortable('disable');
-    }
-    
+
     sl_content.bind("toggleeditmode", function(e){
         sl_content.sortable('enable');
     });
 
     setHeightOfEmptyDropZone();
-    
+
 }
 
 jq(refreshSimplelayoutDragndropOrdering);
