@@ -36,7 +36,7 @@ function refreshSimplelayoutDragndropOrdering() {
 
     jq('.simplelayout-content [id*=slot]').sortable({
 		items: '.BlockOverallWrapper',
-        handle: jq('.BlockOverallWrapper .sl-controls #document-action-dragme a img'),
+        handle: jq('.BlockOverallWrapper .sl-controls .document-action-dragme'),
         scroll : true,
 		forcePlaceholderSize : false,
 		placeholder: 'placeholder',
@@ -99,4 +99,3 @@ function refreshSimplelayoutDragndropOrdering() {
 }
 
 jq(refreshSimplelayoutDragndropOrdering);
-
