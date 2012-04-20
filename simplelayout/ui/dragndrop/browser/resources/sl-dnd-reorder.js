@@ -33,6 +33,7 @@ function setHeightOfEmptyDropZone(){
 function refreshSimplelayoutDragndropOrdering() {
 
     var sl_content = jq('.simplelayout-content');
+    var slots = jq('.simplelayout-content [id*=slot]');
 
     jq('.simplelayout-content [id*=slot]').sortable({
 		items: '.BlockOverallWrapper',
@@ -49,6 +50,7 @@ function refreshSimplelayoutDragndropOrdering() {
             ui.placeholder.css("width", ui.item.width()-1);
             ui.placeholder.css("height", ui.item.height()-1);
             simplelayout.toggleEditMode(enable=false, ui.item.find('.sl-controls'));
+            slots.addClass('highlightBorder');
 
 		},
 		update: function(e, ui){
@@ -83,7 +85,7 @@ function refreshSimplelayoutDragndropOrdering() {
             ui.item.removeAttr("style");
             simplelayout.toggleEditMode(enable=true, ui.item.find('.sl-controls'));
             setHeightOfEmptyDropZone();
-
+            slots.removeClass('highlightBorder');
             jq(".simplelayout-content").trigger('afterReorder');
 
 		}
