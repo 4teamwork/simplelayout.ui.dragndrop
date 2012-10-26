@@ -1,15 +1,31 @@
 Introduction
 ============
 
-following features for simplelayout are provided by this package 
+following features for simplelayout are provided by this package
 
 * using jquery/ajax
 * dragging and dropping blocks arround
 
 
-Copyright and credits
-----------------------
+Usage / Installation
+====================
 
-simplelayout is copyright 2009 by 4teamwork_ , and is licensed under the GPL. See LICENSE.txt for details.
+- See the `simplelayout.base <https://github.com/4teamwork/simplelayout.base>`
+  readme for details.
 
-.. _4teamwork: http://www.4teamwork.ch/ 
+
+Links
+=====
+
+- Simplelayout github project repository: https://github.com/4teamwork/simplelayout.base
+- simplelayout.ui.dragndrop github project repository: https://github.com/4teamwork/simplelayout.ui.dragndrop
+- Issue tracker: https://github.com/4teamwork/simplelayout.ui.dragndrop/issues
+- Package on pypi: http://pypi.python.org/pypi/simplelayout.ui.dragndrop
+
+
+Copyright
+=========
+
+This package is copyright by `4teamwork <http://www.4teamwork.ch/>`_.
+
+``simplelayout.ui.dragndrop`` is licensed under GNU General Public License, version 2.
