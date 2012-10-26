@@ -5,11 +5,12 @@ Changelog
 3.0b3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Move package to github.
+  [jone]
 
 
 3.0b2 (2012-04-23)
-------------------                  
+------------------
 
 - Show border around slots on dranging a block.
   [Julian Infanger]
@@ -77,4 +78,3 @@ Changelog
 - Initial release [mathias.leimgruber]
 - implements block drag 'n' drop [mathias.leimgruber]
 - useing jquery [mathias.leimgruber]
-
