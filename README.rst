@@ -10,7 +10,7 @@ following features for simplelayout are provided by this package
 Usage / Installation
 ====================
 
-- See the `simplelayout.base <https://github.com/4teamwork/simplelayout.base>`
+- See the `simplelayout.base <https://github.com/4teamwork/simplelayout.base>`_
   readme for details.
 
 
