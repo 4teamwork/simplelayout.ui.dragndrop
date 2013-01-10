@@ -5,6 +5,9 @@ Changelog
 3.0b3 (unreleased)
 ------------------
 
+- Remove "setHeightOfEmptyDropZone".
+  [mathias.leimgruber]
+
 - Move package to github.
   [jone]
 

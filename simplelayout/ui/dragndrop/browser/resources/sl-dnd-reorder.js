@@ -1,35 +1,5 @@
 var ui_dragging = false;
 
-function setHeightOfEmptyDropZone(){
-    //set height of empty dropzones
-    var sl_slots = jq('.simplelayout-content [id*=slot]');
-    var heightest_slot = 0;
-
-    if (sl_slots.length > 1){
-        sl_slots.each(function(i,o){
-            var $obj = jq(o);
-            //get height
-            if ($obj.height() > heightest_slot){
-                heightest_slot = $obj.height();
-            }
-
-            var $items = $obj.contents('.BlockOverallWrapper');
-            if ($items.length == 0){
-                if (!$obj.hasClass('emptyZone')){$obj.addClass('emptyZone')};
-            }else{
-                $obj.removeClass('emptyZone');
-            }
-        });
-
-        //set height on empty slots
-        //reset
-        sl_slots.css('height','');
-        var $emptySlots = jq('.emptyZone');
-        if (heightest_slot == 0){$emptySlots.css('height','300px')};
-        if (heightest_slot != 0){$emptySlots.css('height',heightest_slot+'px')};
-    }
-}
-
 function refreshSimplelayoutDragndropOrdering() {
 
     var sl_content = jq('.simplelayout-content');
@@ -70,34 +40,26 @@ function refreshSimplelayoutDragndropOrdering() {
                             type:'POST',
                             data:{ uids : ids ,slot:slot,column:column,obj_uid:obj_uid},
                             success:function(){
-                                if (activeLayout.length != 0){
+                                if (activeLayout.length !== 0){
                                     simplelayout.refreshParagraph(activeLayout[0]);
                                     }
                                 }
                             });
 
 		},
-        /*change: function(e, ui){
-            setHeightOfEmptyDropZone();
-
-		}, */
 		stop: function(e, ui){
             ui.item.removeAttr("style");
             simplelayout.toggleEditMode(enable=true, ui.item.find('.sl-controls'));
-            setHeightOfEmptyDropZone();
             slots.removeClass('highlightBorder');
             jq(".simplelayout-content").trigger('afterReorder');
 
 		}
 
-    })
+    });
 
     sl_content.bind("toggleeditmode", function(e){
         sl_content.sortable('enable');
     });
-
-    setHeightOfEmptyDropZone();
-
 }
 
 jq(refreshSimplelayoutDragndropOrdering);
