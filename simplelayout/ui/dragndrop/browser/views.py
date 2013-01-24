@@ -11,6 +11,10 @@ class SaveDragndropOrderView(BrowserView):
             uid = uids[i]
             uid = uid.replace('uid_','')
             obj = self.context.reference_catalog.lookupObject(uid)
+            # Condition for a special usecase (show the current content also
+            # as block. But this block is no moveable)
+            if obj == self.context:
+                continue
             id = obj.id
             self.context.moveObject(id, i)
             obj.reindexObject(idxs=['getObjPositionInParent'])
