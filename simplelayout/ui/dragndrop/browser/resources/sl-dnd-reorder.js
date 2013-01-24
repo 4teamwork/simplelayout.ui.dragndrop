@@ -1,5 +1,27 @@
 var ui_dragging = false;
 
+
+function setHeightOfEmptyDropZone(){
+    //set height of empty dropzones
+    var sl_slots = jq('.simplelayout-content [id*=slot]');
+    // In case of only one slot, remove emptymarker klass
+    if (sl_slots.length === 1){
+        sl_slots.removeClass('emptymarker');
+        return;
+    }
+
+
+    sl_slots.each(function(i, o){
+        var $slot = jq(o);
+        if ($slot.children('.BlockOverallWrapper:not(.ui-sortable-helper)').length === 0){
+            $slot.addClass('emptymarker');
+        }else{
+            $slot.removeClass('emptymarker');
+        }
+    });
+}
+
+
 function refreshSimplelayoutDragndropOrdering() {
 
     var sl_content = jq('.simplelayout-content');
@@ -23,6 +45,9 @@ function refreshSimplelayoutDragndropOrdering() {
             slots.addClass('highlightBorder');
 
 		},
+        change: function(e, ui){
+            setHeightOfEmptyDropZone();
+        },
 		update: function(e, ui){
             var ids = new Array();
             jq('.BlockOverallWrapper').each(function(i, o) { ids.push(o.id); });
@@ -32,7 +57,6 @@ function refreshSimplelayoutDragndropOrdering() {
 
             var obj_uid = jq(ui.item[0]).attr('id');
             var activeLayout = jq('.sl-layout.active',ui.item);
-
 
             //jq.post('sl_dnd_saveorder', { uids : ids ,slot:slot,column:column,obj_uid:obj_uid});
             //refresh paragraph after reordering
@@ -50,6 +74,7 @@ function refreshSimplelayoutDragndropOrdering() {
 		stop: function(e, ui){
             ui.item.removeAttr("style");
             simplelayout.toggleEditMode(enable=true, ui.item.find('.sl-controls'));
+            setHeightOfEmptyDropZone();
             slots.removeClass('highlightBorder');
             jq(".simplelayout-content").trigger('afterReorder');
 

@@ -5,6 +5,9 @@ Changelog
 3.0b3 (unreleased)
 ------------------
 
+- Reimplement a min height for empty slots.
+  [mathias.leimgruber]
+
 - Condition for a special usecase (show the current content also
   as block. But this block is no moveable)
   [mathias.leimgruber]
