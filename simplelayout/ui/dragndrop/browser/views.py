@@ -27,15 +27,14 @@ class SaveDragndropOrderView(BrowserView):
         if SLOT_INTERFACES_MAP.has_key(slot):
             for i in SLOT_INTERFACES_MAP.values():
                 if i.providedBy(o):
-                    iface_to_remove.append(i) 
-                    
+                    iface_to_remove.append(i)
 
             if SLOT_INTERFACES_MAP[slot] not in iface_to_remove:
                 for iface in iface_to_remove:
                     noLongerProvides(o,iface)
                 alsoProvides(o,SLOT_INTERFACES_MAP[slot])
 
-    
+
         for col in column.split(' '):
             if col.find('column') != -1:
                 new_col = col
@@ -44,6 +43,5 @@ class SaveDragndropOrderView(BrowserView):
                 if i.providedBy(o): noLongerProvides(o,i)
             alsoProvides(o,COLUMN_INTERFACES_MAP[new_col])
         o.reindexObject(idxs=['object_provides'])
-        
+
         return 'ok'
-        
