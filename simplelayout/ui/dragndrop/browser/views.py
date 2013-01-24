@@ -1,7 +1,8 @@
 from Products.Five.browser import BrowserView
-from zope.interface import implements, alsoProvides, noLongerProvides
-from simplelayout.base.config import SLOT_INTERFACES_MAP, \
-                                     COLUMN_INTERFACES_MAP
+from zope.interface import alsoProvides, noLongerProvides
+from simplelayout.base.config import SLOT_INTERFACES_MAP
+from simplelayout.base.config import COLUMN_INTERFACES_MAP
+
 
 class SaveDragndropOrderView(BrowserView):
 
@@ -15,8 +16,8 @@ class SaveDragndropOrderView(BrowserView):
             # as block. But this block is no moveable)
             if obj == self.context:
                 continue
-            id = obj.id
-            self.context.moveObject(id, i)
+            id_ = obj.id
+            self.context.moveObject(id_, i)
             obj.reindexObject(idxs=['getObjPositionInParent'])
 
         #set the new interfaces
