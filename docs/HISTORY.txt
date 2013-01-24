@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-3.0b3 (unreleased)
+3.0c1 (2013-01-24)
 ------------------
 
 - Reimplement a min height for empty slots.

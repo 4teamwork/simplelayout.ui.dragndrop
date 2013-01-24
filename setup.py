@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '3.0b3.dev0'
+version = '3.0c1'
 
 setup(name='simplelayout.ui.dragndrop',
       version=version,
