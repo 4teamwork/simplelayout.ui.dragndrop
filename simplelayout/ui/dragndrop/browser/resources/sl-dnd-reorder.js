@@ -3,7 +3,7 @@ var ui_dragging = false;
 
 function setHeightOfEmptyDropZone(){
     //set height of empty dropzones
-    var sl_slots = jq('.simplelayout-content [id*=slot]');
+    var sl_slots = $('.simplelayout-content [id*=slot]');
     // In case of only one slot, remove emptymarker klass
     if (sl_slots.length === 1){
         sl_slots.removeClass('emptymarker');
@@ -12,7 +12,7 @@ function setHeightOfEmptyDropZone(){
 
 
     sl_slots.each(function(i, o){
-        var $slot = jq(o);
+        var $slot = $(o);
         if ($slot.children('.BlockOverallWrapper:not(.ui-sortable-helper)').length === 0){
             $slot.addClass('emptymarker');
         }else{
@@ -24,16 +24,16 @@ function setHeightOfEmptyDropZone(){
 
 function refreshSimplelayoutDragndropOrdering() {
 
-    var sl_content = jq('.simplelayout-content');
-    var slots = jq('.simplelayout-content [id*=slot]');
+    var sl_content = $('.simplelayout-content');
+    var slots = $('.simplelayout-content [id*=slot]');
 
-    jq('.simplelayout-content [id*=slot]').sortable({
+    $('.simplelayout-content [id*=slot]').sortable({
 		items: '.BlockOverallWrapper',
-        handle: jq('.BlockOverallWrapper .sl-controls .document-action-dragme'),
+        handle: $('.BlockOverallWrapper .sl-controls .document-action-dragme'),
         scroll : true,
 		forcePlaceholderSize : false,
 		placeholder: 'placeholder',
-        connectWith: jq('.simplelayout-content [id*=slot]'),
+        connectWith: $('.simplelayout-content [id*=slot]'),
         /* appendTo : '.BlockOverallWrapper',*/
 		opacity: 0.5,
 		tolerance:'pointer',
@@ -50,15 +50,15 @@ function refreshSimplelayoutDragndropOrdering() {
         },
 		update: function(e, ui){
             var ids = new Array();
-            jq('.BlockOverallWrapper').each(function(i, o) { ids.push(o.id); });
+            $('.BlockOverallWrapper').each(function(i, o) { ids.push(o.id); });
             ids = ids.join(',');
-            var slot = jq(e.target).attr('id');
-            var column = jq(e.target).attr('class');
+            var slot = $(e.target).attr('id');
+            var column = $(e.target).attr('class');
 
-            var obj_uid = jq(ui.item[0]).attr('id');
-            var activeLayout = jq('.sl-layout.active',ui.item);
+            var obj_uid = $(ui.item[0]).attr('id');
+            var activeLayout = $('.sl-layout.active',ui.item);
 
-            //jq.post('sl_dnd_saveorder', { uids : ids ,slot:slot,column:column,obj_uid:obj_uid});
+            //$.post('sl_dnd_saveorder', { uids : ids ,slot:slot,column:column,obj_uid:obj_uid});
             //refresh paragraph after reordering
             ajaxManager.add({url:'sl_dnd_saveorder',
                             type:'POST',
@@ -76,7 +76,7 @@ function refreshSimplelayoutDragndropOrdering() {
             simplelayout.toggleEditMode(enable=true, ui.item.find('.sl-controls'));
             setHeightOfEmptyDropZone();
             slots.removeClass('highlightBorder');
-            jq(".simplelayout-content").trigger('afterReorder');
+            $(".simplelayout-content").trigger('afterReorder');
 
 		}
 
@@ -87,4 +87,4 @@ function refreshSimplelayoutDragndropOrdering() {
     });
 }
 
-jq(refreshSimplelayoutDragndropOrdering);
+$(refreshSimplelayoutDragndropOrdering);
