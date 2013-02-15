@@ -5,6 +5,9 @@ Changelog
 3.0c2 (unreleased)
 ------------------
 
+- Plone 4.3: support for newer jquery versions.
+  [jone]
+
 - Replace jq by $
   [mathias.leimgruber]
 
