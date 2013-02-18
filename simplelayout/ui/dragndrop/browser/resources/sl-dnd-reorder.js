@@ -52,8 +52,17 @@ function refreshSimplelayoutDragndropOrdering() {
             var ids = new Array();
             $('.BlockOverallWrapper').each(function(i, o) { ids.push(o.id); });
             ids = ids.join(',');
-            var slot = $(e.target).attr('id');
-            var column = $(e.target).attr('class');
+
+            if (!$(e.target).attr('id')) {
+                // in newer jquery versions the target is the move link
+                var $slot = $(e.target).parents('.BlockOverallWrapper').parents(':first');
+            } else {
+                // but in older versions it the target was the drop slot
+                var $slot = $(e.target);
+            }
+
+            var slot = $slot.attr('id');
+            var column = $slot.attr('class');
 
             var obj_uid = $(ui.item[0]).attr('id');
             var activeLayout = $('.sl-layout.active',ui.item);
