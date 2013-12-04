@@ -26,7 +26,6 @@ function refreshSimplelayoutDragndropOrdering() {
 
     var sl_content = $('.simplelayout-content');
     var slots = $('.simplelayout-content [id*=slot]');
-
     $('.simplelayout-content [id*=slot]').sortable({
 		items: '.BlockOverallWrapper',
         handle: $('.BlockOverallWrapper .sl-controls .document-action-dragme'),
@@ -43,7 +42,7 @@ function refreshSimplelayoutDragndropOrdering() {
             ui.placeholder.css("height", ui.item.height()-1);
             simplelayout.toggleEditMode(enable=false, ui.item.find('.sl-controls'));
             slots.addClass('highlightBorder');
-
+            $('.simplelayout-content [id*=slot]').sortable("refresh");
 		},
         change: function(e, ui){
             setHeightOfEmptyDropZone();
