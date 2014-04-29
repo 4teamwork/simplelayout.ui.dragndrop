@@ -14,6 +14,14 @@ Usage / Installation
   readme for details.
 
 
+Uninstall
+=========
+
+This package provides an uninstall Generic Setup profile, however, it will
+not uninstall the package dependencies.
+Make sure to uninstall the dependencies if you no longer use them.
+
+
 Links
 =====
 

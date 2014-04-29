@@ -3,6 +3,13 @@ import os
 
 version = '3.0.2.dev0'
 
+tests_require = [
+    'ftw.testing',
+    'plone.app.testing',
+    'simplelayout.base',
+    ]
+
+
 setup(name='simplelayout.ui.dragndrop',
       version=version,
       description="simplelayout drag and drop support",
@@ -33,6 +40,9 @@ setup(name='simplelayout.ui.dragndrop',
         'setuptools',
         'collective.js.jqueryui',
         ],
+
+      tests_require=tests_require,
+      extras_require=dict(tests=tests_require),
 
       entry_points="""
       # -*- Entry points: -*-
