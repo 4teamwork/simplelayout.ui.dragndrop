@@ -27,8 +27,8 @@ Links
 
 - Simplelayout github project repository: https://github.com/4teamwork/simplelayout.base
 - simplelayout.ui.dragndrop github project repository: https://github.com/4teamwork/simplelayout.ui.dragndrop
-- Issue tracker: https://github.com/4teamwork/simplelayout.ui.dragndrop/issues
-- Package on pypi: http://pypi.python.org/pypi/simplelayout.ui.dragndrop
+- Issues: https://github.com/4teamwork/simplelayout.ui.dragndrop/issues
+- Pypi: http://pypi.python.org/pypi/simplelayout.ui.dragndrop
 
 
 Copyright
