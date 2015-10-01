@@ -37,6 +37,7 @@ setup(name='simplelayout.ui.dragndrop',
       zip_safe=False,
 
       install_requires=[
+        'Plone',
         'setuptools',
         'collective.js.jqueryui',
         ],
